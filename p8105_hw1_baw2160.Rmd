@@ -14,7 +14,7 @@ library(tidyverse)
 
 ## Creating a data frame 
 
-It contains one random sample of size 10 from a uniform[0, 5] distribution, one logical vector indicating whether elements of the sample are greater than 2, one character vector of length 10, and one factor vector of length 10:
+The prob1_df data frame contains one random sample of size 10 from a uniform[0, 5] distribution, one logical vector indicating whether elements of the sample are greater than 2, one character vector of length 10, and one factor vector of length 10:
 
 ```{r problem_1_data_frame}
 prob1_df = tibble(
@@ -35,4 +35,15 @@ mean(prob1_df[["unif_samp"]])
 mean(prob1_df[["vec_logic"]])
 mean(prob1_df[["vec_char"]])
 mean(prob1_df[["vec_factor"]])
+```
+Turns out that taking the means of the character and factor vector do not work, but taking the means of the logical vector and the random sample from the uniform distribution do.
+
+The error message indicates that one can only take the mean of a numeric or a logical vector when using the mean() function.
+
+## Converting variables
+In this code chunk, I attempt to my logical, character, and factor vector to a numerical vector:
+```{r convert_to_num, results = "hide"}
+as.numeric(prob1_df[["vec_logic"]])
+as.numeric(prob1_df[["vec_char"]])
+as.numeric(prob1_df[["vec_factor"]])
 ```
