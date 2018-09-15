@@ -20,6 +20,8 @@ It contains one random sample of size 10 from a uniform[0, 5] distribution, one 
 prob1_df = tibble(
   unif_samp = runif(10, 0, 5),
   
+  vec_logic = unif_samp > 2,
+  
   vec_char = c("I", "just", "made", "this", "a", "character", "vector", "of", "size", "ten"),
   
   vec_factor = factor(c("dog", "cat", "cat", "dog", "dog", "dog", "bird", "cat", "dog", "cat"))
