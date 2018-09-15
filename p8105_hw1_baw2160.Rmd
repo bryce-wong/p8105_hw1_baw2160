@@ -41,9 +41,19 @@ Turns out that taking the means of the character and factor vector do not work, 
 The error message indicates that one can only take the mean of a numeric or a logical vector when using the mean() function.
 
 ## Converting variables
-In this code chunk, I attempt to my logical, character, and factor vector to a numerical vector:
+In this code chunk, I attempt to convert my logical, character, and factor vector to a numerical vector:
 ```{r convert_to_num, results = "hide"}
 as.numeric(prob1_df[["vec_logic"]])
 as.numeric(prob1_df[["vec_char"]])
 as.numeric(prob1_df[["vec_factor"]])
 ```
+This works fine for the logical and factor vector, but it appears that I can't convert my character vector into a numerical vector.
+
+In this next chunk, I attempt to convert my character variable to factor and then to numeric. I also try converting my factor variable from factor to character to numeric:
+```{r convert_vec_char, results = "hide"}
+vec_char.factor = factor(prob1_df[["vec_char"]])
+as.numeric(vec_char.factor)
+vec_factor.char = as.character(prob1_df[["vec_factor"]])
+as.numeric(vec_factor.char)
+```
+Once the character variable was a factor variable, it could be converted to a numeric vector. But once the factor variable was turned into  a character variable, it couldn't be converted to a numeric vector. It looks like a character variable cannot become a numeric variable.
