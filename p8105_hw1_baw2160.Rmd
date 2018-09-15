@@ -27,3 +27,9 @@ prob1_df = tibble(
   vec_factor = factor(c("dog", "cat", "cat", "dog", "dog", "dog", "bird", "cat", "dog", "cat"))
 )
 ```
+
+## Taking the mean
+Attempting to take the mean of each variable in my date frame:
+```{r problem_1_means}
+colMeans(prob1_df)
+```
