@@ -31,5 +31,8 @@ prob1_df = tibble(
 ## Taking the mean
 Attempting to take the mean of each variable in my date frame:
 ```{r problem_1_means}
-colMeans(prob1_df)
+mean(prob1_df[["unif_samp"]])
+mean(prob1_df[["vec_logic"]])
+mean(prob1_df[["vec_char"]])
+mean(prob1_df[["vec_factor"]])
 ```
