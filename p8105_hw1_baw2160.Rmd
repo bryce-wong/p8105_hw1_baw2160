@@ -5,9 +5,8 @@ date: "September 14, 2018"
 output: github_document
 ---
 ``` {r loading_libraries, include = FALSE}
-
 library(tidyverse)
-
+library(ggplot2)
 ```
 
 # Problem One:
@@ -58,7 +57,9 @@ as.numeric(vec_factor.char)
 ```
 Once the character variable was a factor variable, it could be converted to a numeric vector. But once the factor variable was turned into  a character variable, it couldn't be converted to a numeric vector. It looks like a character variable cannot become a numeric variable.
 
-## Problem 2:
+# Problem 2:
+
+## New dataframe:
 
 Now we are creating a data frame comprised of:
 x: a random sample of size 1000 from a standard Normal distribution
@@ -80,6 +81,8 @@ prob2_df = tibble(
   vec_factor2 = factor(vec_num)
 )
 ```
+## Describing the problem 2 dataframe:
+
 The size of prob2_df is `r dim(prob2_df)`
 
 The mean of x is `r mean(prob2_df$x)`
@@ -88,6 +91,16 @@ The median of x is `r median(prob2_df$x)`
 
 The proportion of cases for which the logical vector is TRUE is `r mean(prob2_df$vec_logic2)`
 
-Make a scatterplot of y vs x; color points using the logical variable (adding color = ... inside of aes in your ggplot code should help). Make a second and third scatterplot that color points using the numeric and factor variables, respectively, and comment on the color scales.
+## Making a scatterplot: 
 
-Export your first scatterplot to your project directory using ggsave
+```{r Making_scatterplots}
+ggplot(prob2_df, aes(x = x, y = y, color = vec_logic2)) + geom_point()
+
+ggsave(file = "C:/Users/Dell/Documents/3rd Semester - MPH/Data Science I/HW1/p8105_hw1_baw2160/first_scatplot.png")
+
+ggplot(prob2_df, aes(x = x, y = y, color = vec_num)) + geom_point()
+
+ggplot(prob2_df, aes(x = x, y = y, color = vec_factor2)) + geom_point()
+```
+
+Commenting on the color scales...
