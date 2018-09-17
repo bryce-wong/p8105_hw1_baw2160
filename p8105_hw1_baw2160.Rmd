@@ -103,4 +103,6 @@ ggplot(prob2_df, aes(x = x, y = y, color = vec_num)) + geom_point()
 ggplot(prob2_df, aes(x = x, y = y, color = vec_factor2)) + geom_point()
 ```
 
-Commenting on the color scales...
+It appears as if the color scale for the first scatterplot (using the logical vector) is the same as the color for the third scatterplot (using the factor vector). They are colored based on a binary labeling pattern, and the pattern appears exactly the same. This makes sense to me, because they both represent the same vector (the factor vector is created from the logical vector once the logical vector has been converted into numerical values). The information presented in each vector is the same binary info. The difference is that in one the categories are named TRUE and FALSE, and in the other they are named 1 and 0. 
+
+The color scale for the second scatterplot (using the numeric vector) is a little different. In this one, the color can be anywhere along a gradient from dark to light, where the darkest point on the scale represents 0 and the lightest represents 1. In practice, however, the coloring pattern seems the same as the other two plots. Again, the data represented in the numeric vector is the same binary data represented in the logical and factor vector. So, there aren't any points that don't belong to either the darkest or lightest point in the scale, and the position of either one category versus the other is the same. 
