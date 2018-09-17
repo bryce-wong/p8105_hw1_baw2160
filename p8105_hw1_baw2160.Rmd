@@ -80,3 +80,14 @@ prob2_df = tibble(
   vec_factor2 = factor(vec_num)
 )
 ```
+The size of prob2_df is `r dim(prob2_df)`
+
+The mean of x is `r mean(prob2_df$x)`
+
+The median of x is `r median(prob2_df$x)`
+
+The proportion of cases for which the logical vector is TRUE is `r mean(prob2_df$vec_logic2)`
+
+Make a scatterplot of y vs x; color points using the logical variable (adding color = ... inside of aes in your ggplot code should help). Make a second and third scatterplot that color points using the numeric and factor variables, respectively, and comment on the color scales.
+
+Export your first scatterplot to your project directory using ggsave
